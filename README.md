@@ -1,1 +1,1 @@
-# calculator-python-project
+# python-projects
