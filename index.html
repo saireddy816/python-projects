@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Todo App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%232563eb'/%3E%3Cpath d='M28 52l12 12 32-32' stroke='%23fff' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Todo</h1>
+      <button id="themeToggle" class="btn btn--ghost" aria-pressed="false" title="Toggle theme" type="button">🌙</button>
+    </header>
+
+    <form id="addForm" class="add-form" autocomplete="off">
+      <label for="taskInput" class="sr-only">Add a new task</label>
+      <input id="taskInput" class="input" type="text" placeholder="What needs to be done?" minlength="1" required />
+      <button type="submit" class="btn btn--primary">Add</button>
+    </form>
+
+    <section aria-labelledby="listHeading" class="list-section">
+      <h2 id="listHeading" class="sr-only">Tasks</h2>
+      <ul id="taskList" class="task-list" aria-live="polite" aria-relevant="additions removals"></ul>
+    </section>
+
+    <div class="controls">
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true" type="button">All</button>
+        <button class="filter" data-filter="active" role="tab" aria-selected="false" type="button">Active</button>
+        <button class="filter" data-filter="completed" role="tab" aria-selected="false" type="button">Completed</button>
+      </div>
+      <div class="meta">
+        <span id="itemsLeft">0 items left</span>
+        <button id="clearCompleted" class="btn btn--ghost" type="button">Clear completed</button>
+      </div>
+    </div>
+
+    <footer class="app__footer">
+      <p>Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
