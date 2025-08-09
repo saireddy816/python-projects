@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple To‑Do App</title>
+  <meta name="description" content="A simple To‑Do web app built with HTML, CSS, and JavaScript." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>To‑Do</h1>
+  </header>
+
+  <main class="app-main">
+    <section class="todo-card" aria-labelledby="todo-heading">
+      <h2 id="todo-heading" class="sr-only">To‑Do List</h2>
+
+      <form id="new-task-form" autocomplete="off">
+        <label class="sr-only" for="task-input">Add a task</label>
+        <input id="task-input" name="task" type="text" placeholder="What needs to be done?" required minlength="1" maxlength="120" />
+        <button type="submit" class="primary">Add</button>
+      </form>
+
+      <ul id="task-list" class="task-list" aria-live="polite" aria-relevant="additions removals"></ul>
+
+      <div class="toolbar">
+        <span id="task-count">0 items</span>
+        <button id="clear-completed" class="link" type="button">Clear completed</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
